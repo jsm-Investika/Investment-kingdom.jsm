@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>User Dashboard | MyApp</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body onload="displayUserDashboard()">
+  <h2>Welcome, <span id="usernameDisplay"></span></h2>
+
+  <nav>
+    <button onclick="showHome()">🏠 Home</button>
+    <button onclick="showWallet()">💰 Wallet</button>
+    <button onclick="logout()">🚪 Logout</button>
+  </nav>
+
+  <div id="contentArea">
+    <!-- Content will load here -->
+  </div>
+
+  <script src="js/script.js"></script>
+
+  <script>
+    function showHome() {
+      document.getElementById("contentArea").innerHTML = `
+        <h3>About</h3>
+        <p>Welcome to MyApp. Earn 15% profit monthly.</p>
+        <p>Customer Care: +255 746 838 432</p>
+      `;
+    }
+
+    function showWallet() {
+      let currentUser = JSON.parse(localStorage.getItem("currentUser"));
+      document.getElementById("contentArea").innerHTML = `
+        <h3>Your Wallet</h3>
+        <p>Balance: ${currentUser.balance} TZS</p>
+        <button onclick="showDeposit()">Deposit</button>
+        <button onclick="showWithdraw()">Withdraw</button>
+      `;
+    }
+
+    function showDeposit() {
+      document.getElementById("contentArea").innerHTML = `
+        <h3>Deposit Money</h3>
+        <input type="number" id="depositAmount" placeholder="Amount"><br><br>
+        <input type="text" id="depositPhone" placeholder="Your phone number"><br><br>
+        <input type="text" id="depositNetwork" placeholder="Network (e.g. M-Pesa)"><br><br>
+        <button onclick="depositMoney()">Deposit Now</button>
+      `;
+    }
+
+    function showWithdraw() {
+      document.getElementById("contentArea").innerHTML = `
+        <h3>Withdraw Money</h3>
+        <input type="number" id="withdrawAmount" placeholder="Amount"><br><br>
+        <input type="text" id="withdrawPhone" placeholder="Phone number to receive money"><br><br>
+        <input type="text" id="withdrawName" placeholder="Receiver name"><br><br>
+        <input type="text" id="withdrawNetwork" placeholder="Network (e.g. M-Pesa)"><br><br>
+        <button onclick="withdrawMoney()">Withdraw Now</button>
+      `;
+    }
+  </script>
+</body>
+</html>

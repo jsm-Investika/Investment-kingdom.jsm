@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wallet</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+  <div class="container">
+    <h2>Wallet</h2>
+
+    <p><strong>Balance:</strong> <span id="userBalance">0</span> TZS</p>
+
+    <h3>Deposit Money</h3>
+    <form id="depositForm">
+      <input type="number" id="depositAmount" placeholder="Amount" required><br>
+      <input type="text" id="depositPhone" placeholder="Your Phone Number" required><br>
+      <input type="text" id="depositNetwork" placeholder="Network (e.g. M-Pesa)" required><br>
+      <button type="submit">Deposit Now</button>
+    </form>
+
+    <h3>Withdraw Money</h3>
+    <form id="withdrawForm">
+      <input type="number" id="withdrawAmount" placeholder="Amount" required><br>
+      <input type="text" id="withdrawPhone" placeholder="Phone Number" required><br>
+      <input type="text" id="withdrawName" placeholder="Receiver Name" required><br>
+      <input type="text" id="withdrawNetwork" placeholder="Network" required><br>
+      <button type="submit">Request Withdrawal</button>
+    </form>
+
+    <button onclick="window.location.href='dashboard.html'">Back to Home</button>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
+
+<form id="depositForm" onsubmit="return depositMoney()">
+  <input type="number" id="depositAmount" placeholder="Amount" required><br>
+  <input type="text" id="depositPhone" placeholder="Your Phone Number" required><br>
+  <input type="text" id="depositNetwork" placeholder="Network (e.g. M-Pesa)" required><br>
+  <button type="submit">Deposit Now</button>
+</form>

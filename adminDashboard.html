@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Dashboard | MyApp</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body onload="viewAllUsers(); viewDepositRequests(); viewWithdrawalRequests();">
+  <h2>Admin Dashboard</h2>
+
+  <!-- View All Users -->
+  <h3>All Users</h3>
+  <ul id="userList"></ul>
+
+  <!-- Change User Balance -->
+  <h3>Change User Balance</h3>
+  <input type="text" id="changePhone" placeholder="User Phone"><br><br>
+  <input type="number" id="newBalance" placeholder="New Balance"><br><br>
+  <button onclick="changeUserBalance()">Update Balance</button>
+
+  <hr>
+
+  <!-- View Deposit Requests -->
+  <h3>Deposit Requests</h3>
+  <ul id="depositList"></ul>
+
+  <hr>
+
+  <!-- View Withdrawal Requests -->
+  <h3>Withdrawal Requests</h3>
+  <ul id="withdrawList"></ul>
+
+  <hr>
+
+  <!-- Change Payment Details -->
+  <h3>Change Payment Details</h3>
+  <input type="text" id="payNumber" placeholder="Payment Number"><br><br>
+  <input type="text" id="payName" placeholder="Payment Name"><br><br>
+  <input type="text" id="payNetwork" placeholder="Network"><br><br>
+  <button onclick="savePaymentDetails()">Save Payment Details</button>
+
+  <br><br>
+  <button onclick="window.location.href='index.html'">Logout</button>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
